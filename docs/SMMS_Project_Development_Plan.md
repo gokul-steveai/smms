@@ -33,9 +33,9 @@ This document outlines the detailed development plan for the SMMS™ platform ba
 
 ## 3. Phased Development Roadmap
 
-The development is divided into four main phases (aligning with the 10-week POC methodology).
+The software engineering lifecycle is structured into five core phases to build the platform progressively before it is deployed for the client's operational rollout.
 
-### Phase 1: Core Domain Models & Data Foundation (Weeks 1-2)
+### Phase 1: Core Domain Models & Data Foundation
 **Goal:** Establish the strict data schemas and constraints defined in the PRD.
 
 * **Tasks:**
@@ -46,7 +46,7 @@ The development is divided into four main phases (aligning with the 10-week POC 
   * Create mock data generation for POC testing.
 * **Deliverables:** Validated Pydantic models in `smms.models`.
 
-### Phase 2: Jobs-to-Services AI Pipeline & Workforce Agent (Weeks 3-4)
+### Phase 2: Jobs-to-Services AI Pipeline & Workforce Agent
 **Goal:** Build the engine that converts legacy HRIS job data and existing catalogs into normalized SMMS services.
 
 * **Tasks:**
@@ -57,7 +57,7 @@ The development is divided into four main phases (aligning with the 10-week POC 
   * Build the Human-in-the-Loop review mechanism (approval/edit gates).
 * **Deliverables:** Working pipeline script where the Workforce Agent takes a job description and outputs a validated `ServiceProfile`.
 
-### Phase 3: The Value Exchange (VE) Engine & Agent Network (Weeks 5-7)
+### Phase 3: The Value Exchange (VE) Engine & Agent Network
 **Goal:** Develop the agentic system that manages live service agreements between Talent and Customers.
 
 * **Tasks:**
@@ -68,7 +68,7 @@ The development is divided into four main phases (aligning with the 10-week POC 
   * Develop the **Talent+AI Login Agent**: A conversational interface for users to check VE status, draft communications, and view their portfolio.
 * **Deliverables:** Agent interaction tests simulating a successful and an escalated Value Exchange negotiation.
 
-### Phase 4: Analytics, ROTA™, and Continuous Loop (Weeks 8-10)
+### Phase 4: Analytics, ROTA™, and Continuous Loop
 **Goal:** Implement the metrics that prove the margin acceleration and drive continuous improvement.
 
 * **Tasks:**
