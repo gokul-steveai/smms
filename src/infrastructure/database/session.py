@@ -1,13 +1,11 @@
 from sqlalchemy.ext.asyncio import AsyncSession, async_sessionmaker, create_async_engine
 
-from src.core.config import settings
+from core.config import settings
 
-# Create the async engine
 engine = create_async_engine(
     settings.DATABASE_URL,
-    echo=False,  # Set to True for SQL query debugging
+    echo=False,
     future=True,
-    # SQLite-specific arguments (ignored by Postgres)
     connect_args={"check_same_thread": False}
     if "sqlite" in settings.DATABASE_URL
     else {},
@@ -24,7 +22,6 @@ AsyncSessionLocal = async_sessionmaker(
 
 
 async def get_db_session():
-    """FastAPI Dependency for getting an async database session."""
     async with AsyncSessionLocal() as session:
         try:
             yield session
